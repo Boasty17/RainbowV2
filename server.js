@@ -24,11 +24,36 @@ client.on("guildCreate", guild => {
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
+client.on('message', message => {
+  if (message.content === 'r!help') {
+	  var help_embed = new Discord.RichEmbed()
+	  .setColor("247CFF")
+	  .setTitle("Rainbow")
+	  .addField("Help", "`r!help`, `r!ping`, `r!news`, `r!info`, `r!support`, `r!invite`, `r!avatar`,`r!update`")
+	  .addField("Fun", "soon")
+	  .setImage("https://tmiv5.weebly.com/uploads/5/5/6/5/55652459/blasty-bot-by-zenka_orig.png")
+	  .setFooter(message.author.username + " | r!help | Rainbow " | © Rainbow 2018-2019")
 
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
+});
+client.on('message', message => {
+  if (message.content === 'r!invite') {
+    message.reply("Invite Rainbow\n<https://discordapp.com/oauth2/authorize?client_id=474739891175948288&scope=bot&permissions=8>");
+  }
+}); 
+client.on('message', message => {
+  if (message.content === 'r!roblox') {
+	  var help_embed = new Discord.RichEmbed()
+	  .setColor("247CFF")
+	  .setTitle("Rublux")
+	  .setImage("http://wiki.roblox.com/images/5/59/NetworkPhysicsSolution1.gif")
+	  .setFooter(message.author.username + " | r!roblox | Rainbow " | © Rainbow 2018-2019")
+	  message.channel.sendEmbed(help_embed);
+    //message.channel.send('Rublux http://wiki.roblox.com/images/5/59/NetworkPhysicsSolutions1
+  }
 });
 
 
